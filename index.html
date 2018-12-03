@@ -3,10 +3,13 @@
 <head>
   <title>My first Vue app</title>
   <script src="https://unpkg.com/vue"></script>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 </head>
 <body>
   <div id="app">
-    {{ message }}
+      <!-- <input v-model="message" placeholder="edit me" v-on:change="signalChange"> -->
+      <input placeholder="edit me" v-on:input="fetchData()">
+      <p>Message is: {{ message }}</p>
   </div>
   <script src="./src/main.js"></script>
 </body>
