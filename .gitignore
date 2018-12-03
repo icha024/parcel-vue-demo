@@ -79,4 +79,4 @@ typings/
 .dynamodb/ 
 
 # dist
-dist
+#dist
