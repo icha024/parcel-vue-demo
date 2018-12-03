@@ -10,7 +10,11 @@
       <h3>Check crypto currency price (BTC, ETH, ETC)</h3>
       <!-- <input v-model="message" placeholder="edit me" v-on:change="signalChange"> -->
       <input v-model="currency" placeholder="currency code" v-on:input="fetchData()">
-      <p>Price is: {{ message }}</p>
+      <!-- <p>Price is: {{ price }}</p> -->
+      <p> Currency Code: {{ currency }}</p>
+      <p> USD: {{ priceByCurrency.USD }}</p>
+      <p> EUR: {{ priceByCurrency.EUR }}</p>
+      <p> GBP: {{ priceByCurrency.GBP }}</p>
   </div>
   <script src="./src/main.js"></script>
 </body>
