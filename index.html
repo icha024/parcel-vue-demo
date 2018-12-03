@@ -7,9 +7,10 @@
 </head>
 <body>
   <div id="app">
+      <h3>Check crypto currency price (BTC, ETH, ETC)</h3>
       <!-- <input v-model="message" placeholder="edit me" v-on:change="signalChange"> -->
-      <input placeholder="edit me" v-on:input="fetchData()">
-      <p>Message is: {{ message }}</p>
+      <input v-model="currency" placeholder="currency code" v-on:input="fetchData()">
+      <p>Price is: {{ message }}</p>
   </div>
   <script src="./src/main.js"></script>
 </body>
