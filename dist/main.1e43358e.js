@@ -83,14 +83,16 @@ new Vue({
   methods: {
     fetchData: function fetchData() {
       var vm = this;
-      axios.get('https://min-api.cryptocompare.com/data/pricemulti?fsyms=' + vm.currency + '&tsyms=USD,EUR,GBP').then(function (response) {
-        if (vm.currency.length == 3) {
+
+      if (vm.currency.length == 3) {
+        vm.currency = vm.currency.toUpperCase();
+        axios.get('https://min-api.cryptocompare.com/data/pricemulti?fsyms=' + vm.currency + '&tsyms=USD,EUR,GBP').then(function (response) {
           vm.price = response.data;
           vm.priceByCurrency.USD = response.data[vm.currency].USD;
           vm.priceByCurrency.EUR = response.data[vm.currency].EUR;
           vm.priceByCurrency.GBP = response.data[vm.currency].GBP;
-        }
-      });
+        });
+      }
     }
   }
 });
@@ -113,7 +115,7 @@ function Module(config) {
 module.bundle.Module = Module;
 
 if (!module.bundle.parent && typeof WebSocket !== 'undefined') {
-  var ws = new WebSocket('ws://localhost:44939/');
+  var ws = new WebSocket('ws://localhost:51124/');
   ws.onmessage = function(event) {
     var data = JSON.parse(event.data);
 
